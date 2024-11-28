@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: kilt-chopsticks
+    runtime: docker
+    plan: starter
+    region: frankfurt
+
+    # Docker configuration
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+
+    # Health check to ensure the service is running
+    healthCheckPath: /
+
+    # Environment variables
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CONFIG_FILE
+        value: kilt-paseo.yml
+      - key: PORT
+        value: 8000
+
+    # Auto-deploy settings
+    autoDeploy: true

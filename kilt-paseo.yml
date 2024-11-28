@@ -1,0 +1,17 @@
+endpoint:
+  - wss://peregrine.kilt.io/parachain-public-ws
+mock-signature-host: true
+block: 7056918
+wasm-override: peregrine_runtime.compact.compressed.wasm
+
+import-storage:
+  System:
+    Account:
+      - - - 4oNfaHuDPTzwetbwv7gS5iGok62Np7MqzNV7fhoBUZUuEcVe # Main Account
+        - providers: 1
+          data:
+            free: "10000000000000000000" # 10K Plt
+      - - - 4sY2ynBUaxgWfBqMiqH2qMK62jYhqWjrXbbL53WvxTD85pbu # Proxy
+        - providers: 1
+          data:
+            free: "10000000000000000000" # 10K Plt
